@@ -1,3 +1,4 @@
+
 from fastapi import FastAPI, Depends
 from jwtauth import router  # Ensure jwtauth.py has a `router` defined
 from fastapi.security import OAuth2PasswordBearer
