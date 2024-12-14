@@ -138,16 +138,16 @@ Paddock Pal offers a suite of features for:
 ### Step 1: Clone the Repository
 
 Clone the repository to your local machine:
-```bash
+bash
 git clone https://github.com/your-repo/paddock-pal.git
 cd paddock-pal
-Step 2: Install Dependencies
+### Step 2: Install Dependencies
 Install all required dependencies using Poetry:
 
 bash
 Copy code
 poetry install
-Step 3: Configure Environment Variables
+### Step 3: Configure Environment Variables
 Create a .env file in the root directory and add the following variables:
 
 env
@@ -158,7 +158,9 @@ SNOWFLAKE_PASSWORD=your_snowflake_password
 SNOWFLAKE_ACCOUNT=your_snowflake_account
 S3_BUCKET_NAME=your_s3_bucket_name
 OPENF1_API_KEY=your_openf1_api_key
-Step 4: Initialize Databases
+
+
+### Step 4: Initialize Databases
 Set up Snowflake for structured data:
 
 Create tables for storing regulatory clauses, historical race information, and user data.
@@ -169,7 +171,9 @@ Use the text embeddings from OpenAI to index regulatory content in Pinecone.
 Configure Amazon S3:
 
 Store FIA PDFs in an S3 bucket for text extraction.
-Step 5: Run Airflow for Automation
+
+
+### Step 5: Run Airflow for Automation
 Initialize Airflow and set up data scraping:
 
 bash
@@ -178,19 +182,21 @@ airflow db init
 airflow webserver -p 8080
 airflow scheduler
 Execution Instructions
-Step 1: Start the Backend Server
+
+### Step 1: Start the Backend Server
 Run the FastAPI server to handle backend operations:
 
 bash
 Copy code
 poetry run uvicorn fastapi_app:app --reload
-Step 2: Start the Frontend Application
+### Step 2: Start the Frontend Application
 Run the Streamlit application for the user interface:
 
 bash
 Copy code
 poetry run streamlit run app.py
-Step 3: Access the Application
+
+### Step 3: Access the Application
 Open your browser and navigate to:
 
 arduino
