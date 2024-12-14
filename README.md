@@ -1,4 +1,7 @@
 # Paddock Pal: Your Comprehensive Formula 1 Companion
+- Saurabh Vyawahare
+- Aniket Pataloe
+- Bhavya Parmar
 
 ## Introduction
 
