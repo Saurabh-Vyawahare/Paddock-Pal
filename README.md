@@ -133,6 +133,70 @@ Paddock Pal offers a suite of features for:
 
 ---
 
+## Setup Instructions
+
+### Step 1: Clone the Repository
+
+Clone the repository to your local machine:
+```bash
+git clone https://github.com/your-repo/paddock-pal.git
+cd paddock-pal
+Step 2: Install Dependencies
+Install all required dependencies using Poetry:
+
+bash
+Copy code
+poetry install
+Step 3: Configure Environment Variables
+Create a .env file in the root directory and add the following variables:
+
+env
+Copy code
+OPENAI_API_KEY=your_openai_api_key
+SNOWFLAKE_USER=your_snowflake_user
+SNOWFLAKE_PASSWORD=your_snowflake_password
+SNOWFLAKE_ACCOUNT=your_snowflake_account
+S3_BUCKET_NAME=your_s3_bucket_name
+OPENF1_API_KEY=your_openf1_api_key
+Step 4: Initialize Databases
+Set up Snowflake for structured data:
+
+Create tables for storing regulatory clauses, historical race information, and user data.
+Populate initial data for testing.
+Populate Pinecone with embeddings:
+
+Use the text embeddings from OpenAI to index regulatory content in Pinecone.
+Configure Amazon S3:
+
+Store FIA PDFs in an S3 bucket for text extraction.
+Step 5: Run Airflow for Automation
+Initialize Airflow and set up data scraping:
+
+bash
+Copy code
+airflow db init
+airflow webserver -p 8080
+airflow scheduler
+Execution Instructions
+Step 1: Start the Backend Server
+Run the FastAPI server to handle backend operations:
+
+bash
+Copy code
+poetry run uvicorn fastapi_app:app --reload
+Step 2: Start the Frontend Application
+Run the Streamlit application for the user interface:
+
+bash
+Copy code
+poetry run streamlit run app.py
+Step 3: Access the Application
+Open your browser and navigate to:
+
+arduino
+Copy code
+http://localhost:8501
+
 ## Conclusion
 
 **Paddock Pal** is designed to transform the way Formula 1 fans, professionals, and officials interact with the sport. By integrating advanced AI capabilities with real-time data access and an engaging user interface, the platform will enhance transparency, education, and entertainment. Whether you're a casual fan or a decision-maker in the FIA, Paddock Pal offers tools to enrich your understanding and engagement with Formula 1.
